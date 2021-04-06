@@ -11,13 +11,13 @@ pipeline{
     }
     stage('Build'){
     steps{
-        bat 'mvn install'
+        bat 'echo mvn install'
     }
     }
     stage('unit test'){
     steps
         {
-        bat 'mvn test'
+        bat 'echo mvn test'
     }
 }
 stage('Sonar Analysis'){
