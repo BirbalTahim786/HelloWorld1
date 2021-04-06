@@ -11,13 +11,13 @@ pipeline{
     }
     stage('Build'){
     steps{
-        bat 'echo mvn install'
+        bat 'mvn install'
     }
     }
     stage('unit test'){
     steps
         {
-        bat 'echo mvn test'
+        bat 'mvn test'
     }
 }
 stage('Sonar Analysis'){
@@ -25,7 +25,7 @@ stage('Sonar Analysis'){
         {
             withSonarQubeEnv('Test_Sonar')
             {
-                bat 'echo mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+                bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
             }
         
     }
